@@ -1,3 +1,4 @@
+//16 oggetti
 const icons = [
 	{
 		name: 'cat',
@@ -112,6 +113,7 @@ const icons = [
 		color: 'blue'
 	}
 ];
+
 // Milestone 1
 // Partendo dalla struttura dati fornita, 
 // visualizzare in pagina un box per ogni icona, 
@@ -120,3 +122,33 @@ const icons = [
 // Ciascuna icona ha una proprietà “color”: 
 // utilizzare questa proprietà 
 // per visualizzare le icone del colore corrispondente.
+
+const pagina = document.getElementById("container");
+icons.forEach((icon) => {
+    const {name,prefix,type,family,color} = icon;
+    //console.log(name,prefix,type,family,color);
+    const inPage = ` 
+    <div class="box">
+    <i class="${family} ${prefix}${name} ${type} ${color}"></i>
+    <div class="text">
+            ${name} 
+        </div>
+    </div>`
+    //stampa in-page
+    pagina.innerHTML += inPage;
+    
+});
+
+//bottone BONUS
+const btn = document.querySelector(".dropbtn");
+const dropMenu = document.getElementById("dropdown")
+
+btn.addEventListener("click" ,function(){
+    if(dropMenu.classList.contains("off")){
+        dropMenu.classList.remove("off")
+    }else{
+        dropMenu.classList.add("off")
+    }
+})
+
+
