@@ -135,8 +135,7 @@ icons.forEach((icon) => {
         </div>
     </div>`
     //stampa in-page
-    pagina.innerHTML += inPage;
-    
+    pagina.innerHTML += inPage;  
 });
 
 //bottone BONUS
@@ -150,5 +149,4 @@ btn.addEventListener("click" ,function(){
         dropMenu.classList.add("off")
     }
 })
-
 
