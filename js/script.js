@@ -174,6 +174,7 @@ all.addEventListener("click", function() {
 		//stampa in-page
 		pagina.innerHTML += spampaPage(name,prefix,type,family,color);
 	});
+	dropMenu.classList.add("off")
 })
 animal.addEventListener("click", function() {
 	//console.log("sei su animal");
@@ -185,6 +186,7 @@ animal.addEventListener("click", function() {
 		//stampa in-page
 		pagina.innerHTML += spampaPage(name,prefix,type,family,color);
 	});
+	dropMenu.classList.add("off")
 })
 veggy.addEventListener("click", function() {
 	//console.log("sei su veggy");
@@ -196,6 +198,7 @@ veggy.addEventListener("click", function() {
 		//stampa in-page
 		pagina.innerHTML += spampaPage(name,prefix,type,family,color);
 	});
+	dropMenu.classList.add("off")
 })
 user.addEventListener("click", function() {
 	//console.log("sei su user");
@@ -207,6 +210,7 @@ user.addEventListener("click", function() {
 		//stampa in-page
 		pagina.innerHTML += spampaPage(name,prefix,type,family,color);  
 	});
+	dropMenu.classList.add("off")
 })
 
 
