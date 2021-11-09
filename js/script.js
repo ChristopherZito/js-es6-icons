@@ -126,16 +126,9 @@ const icons = [
 const pagina = document.getElementById("container");
 icons.forEach((icon) => {
     const {name,prefix,type,family,color} = icon;
-    //console.log(name,prefix,type,family,color);
-    const inPage = ` 
-    <div class="box">
-    <i class="${family} ${prefix}${name} ${type} ${color}"></i>
-    <div class="text">
-            ${name} 
-        </div>
-    </div>`
-    //stampa in-page
-    pagina.innerHTML += inPage;  
+	//console.log(name,prefix,type,family,color);
+	//stampa in-page
+	pagina.innerHTML += spampaPage(name,prefix,type,family,color); 
 });
 
 //bottone BONUS
@@ -149,4 +142,83 @@ btn.addEventListener("click" ,function(){
         dropMenu.classList.add("off")
     }
 })
+//creazione array nuovi
+const newAnimal = icons.filter((animali) => {
+	return animali.type == "animal";
+})
 
+
+const newVeggy = icons.filter((vegetali) => {
+	return vegetali.type == "vegetable";
+})
+
+
+const newUser = icons.filter((utenti) => {
+	return utenti.type == "user";
+})
+// console.log(newAnimal);
+// console.log(newVeggy);
+// console.log(newUser);
+
+const all = document.getElementById("all");
+const animal = document.getElementById("animal");
+const veggy = document.getElementById("veggy");
+const user = document.getElementById("user");
+all.addEventListener("click", function() {
+	//console.log("sei su all");
+	pagina.innerHTML = "";
+	//stampa tutto
+	icons.forEach((icon) => {
+		const {name,prefix,type,family,color} = icon;
+		//console.log(name,prefix,type,family,color);
+		//stampa in-page
+		pagina.innerHTML += spampaPage(name,prefix,type,family,color);
+	});
+})
+animal.addEventListener("click", function() {
+	//console.log("sei su animal");
+	pagina.innerHTML = "";
+	//stampasolo animal
+	newAnimal.forEach((icon) => {
+		const {name,prefix,type,family,color} = icon;
+		//console.log(name,prefix,type,family,color);
+		//stampa in-page
+		pagina.innerHTML += spampaPage(name,prefix,type,family,color);
+	});
+})
+veggy.addEventListener("click", function() {
+	//console.log("sei su veggy");
+	pagina.innerHTML = "";
+	//stampa solo vegetaria
+	newVeggy.forEach((icon) => {
+		const {name,prefix,type,family,color} = icon;
+		//console.log(name,prefix,type,family,color);
+		//stampa in-page
+		pagina.innerHTML += spampaPage(name,prefix,type,family,color);
+	});
+})
+user.addEventListener("click", function() {
+	//console.log("sei su user");
+	pagina.innerHTML = "";
+	//stampa solo User
+	newUser.forEach((icon) => {
+		const {name,prefix,type,family,color} = icon;
+		//console.log(name,prefix,type,family,color);
+		//stampa in-page
+		pagina.innerHTML += spampaPage(name,prefix,type,family,color);  
+	});
+})
+
+
+//funzione stampa
+function spampaPage(name,prefix,type,family,color) {
+	const inPage = ` 
+	<div class="box">
+	<i class="${family} ${prefix}${name} ${type} ${color}"></i>
+	<div class="text">
+			${name} 
+		</div>
+	</div>`
+	//stampa in-page
+	return inPage; 
+}

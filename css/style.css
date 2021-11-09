@@ -94,3 +94,7 @@ body {
     background-color: lightgreen;
     cursor: pointer;
 }
+
+#icone option {
+    text-align: center;
+}
